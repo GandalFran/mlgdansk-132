@@ -45,19 +45,15 @@ def behaviour():
         producer.produce({
             'request-id': request_id,
             'content-id': tweetSentiment.uuid,
-            'sentiment': tweetSentiment.sentiment,
+            'document-content': tweetSentiment.sentiment,
             'date': tweetSentiment.date
         })
         
         logger.info(f"Finished request {request_id}")
+
         # Create status info
         logger.info(f"Processing status request {request_id}")
         producer_status.produce({
-            'request-id': request_id,
-            'status-id': str(uuid.uuid4()),
-            'item-type': "tweet",
-            'task': "sentiment-analysis",
-            'elements': 1
         })
         logger.info(f"Finished status request {request_id}")
 
