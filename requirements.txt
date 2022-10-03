@@ -1,0 +1,11 @@
+fasttext
+requests
+setuptools
+confluent_kafka
+vaderSentiment
+urllib3
+nltk
+stop_words
+textblob
+spacy_entity_linker
+deep-translator==1.5.0

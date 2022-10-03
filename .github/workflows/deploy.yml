@@ -1,0 +1,22 @@
+name: deploy
+
+on:
+  push:
+    branches: main
+
+jobs:
+  download: 
+    runs-on: [self-hosted, Linux, X64]  
+    steps:  
+    - name: download new changes
+      uses: actions/checkout@v2
+  restart:
+    runs-on: [self-hosted, Linux, x64]
+    needs: download
+    steps:
+    - name: script unix format data parsing
+      run: sudo dos2unix launch.sh
+    - name: restart pm2
+      run: sudo pm2 start pm2.json
+    - name: save pm2
+      run: sudo pm2 save

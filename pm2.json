@@ -1,0 +1,11 @@
+{
+  "apps" : [
+    {
+      "name": "mlgdansk132",
+      "interpreter": "/bin/bash",
+      "script": "launch.sh",
+      "out_file": "/var/log/mlgdansk132.log",
+      "error_file": "/var/log/mlgdansk132.err"
+    }
+  ]
+}
